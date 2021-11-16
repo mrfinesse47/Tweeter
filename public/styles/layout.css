@@ -3,10 +3,13 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -18,8 +21,45 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+nav {
+  height: 120px;
+  width: 100%;
+  background-color: #4056a1;
+  z-index: 1;
+  padding: 1.5em;
+
+  /* for tweeter logo */
+}
+
+#new-tweeter {
+  color: #ffffff;
+}
+
+#logo {
+  font-family: "Bungee", cursive;
+  color: #ffffff;
+  font-size: 36px;
+}
+
+nav .container {
+  display: flex;
+  margin-top: 5px;
+  justify-content: space-between;
+}
+
+.container .vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.fa-angle-double-down {
+  color: red;
+  align-self: center;
+}
