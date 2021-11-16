@@ -35,3 +35,7 @@
   padding-right: 5px;
   font-family: "Bungee", cursive;
 }
+
+.over-limit {
+  color: red;
+}
