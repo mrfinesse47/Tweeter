@@ -22,6 +22,8 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: "Source Sans Pro", sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 /*
@@ -36,6 +38,12 @@ nav {
   padding: 1.5em;
 
   /* for tweeter logo */
+}
+
+main {
+  width: 90%;
+  background-color: #545149;
+  align-self: center;
 }
 
 #new-tweeter {
