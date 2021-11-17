@@ -4,17 +4,14 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function () {
-  //creates the tweet element in JQuery html form
+const createTweetElement = ({ user, content, created_at }) => {
+  //destructuring for easy variable naming
+  const { name, handle, avatars } = user;
+  const { text } = content;
 
-  const createTweetElement = ({ user, content, created_at }) => {
-    //destructuring for easy variable naming
-    const { name, handle, avatars } = user;
-    const { text } = content;
+  // Using Timeago JQuery library to convert UNIX epoch into timeago see: $.timeago(created_at)
 
-    // Using Timeago JQuery library to convert UNIX epoch into timeago see: $.timeago(created_at)
-
-    return $(`<article class="tweet">
+  return $(`<article class="tweet">
   <div class="container">
     <header>
       <div>
@@ -39,11 +36,28 @@ $(document).ready(function () {
     </footer>
   </div>
 </article>`);
-  };
+};
 
+//renders the tweets to index.html in the #tweets-container id
+
+const renderTweets = (tweets) => {
+  tweets.forEach((tweet) => {
+    const $tweet = createTweetElement(tweet);
+    $("#tweets-container").append($tweet);
+  });
+};
+
+//Loads tweets from /tweets using AJAX
+
+const loadTweets = () => {
+  $.ajax(" /tweets", { method: "GET" }).then(function (tweets) {
+    renderTweets(tweets);
+  });
+};
+
+const newTweetHandler = () => {
   $("#post-tweet").submit(function (event) {
     event.preventDefault();
-    console.log($(this).serialize());
 
     $.ajax({
       url: "/tweets/",
@@ -58,23 +72,11 @@ $(document).ready(function () {
         console.log(error, "status:", status);
       });
   });
+};
 
-  // Test / driver code (temporary). Eventually will get this from the server.
-  const tweetData = {
-    user: {
-      name: "Newton",
-      avatars: "https://i.imgur.com/73hZDYK.png",
-      handle: "@SirIsaac",
-    },
-    content: {
-      text: "If I have seen further it is by standing on the shoulders of giants",
-    },
-    created_at: 1461116232227,
-  };
+$(document).ready(function () {
+  //loads and renders all  the tweets in the db to index.html
+  loadTweets();
 
-  const $tweet = createTweetElement(tweetData);
-
-  // Test / driver code (temporary)
-
-  $("#tweets-container").append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+  newTweetHandler(); //initilizes the new tweet form behaviour
 });
