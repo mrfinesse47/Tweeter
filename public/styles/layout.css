@@ -18,8 +18,8 @@ html {
  */
 
 body {
-  color: #545149;
-  background-color: #f4f1ec;
+  color: #5ebec4;
+  background-color: #fdf5df;
   font-size: 24px;
   font-family: "Source Sans Pro", sans-serif;
   display: flex;
@@ -33,16 +33,20 @@ body {
 nav {
   height: 120px;
   width: 100%;
-  background-color: #4056a1;
+  background-color: #5ebec4;
   z-index: 1;
   padding: 1.5em;
 
   /* for tweeter logo */
 }
 
+p {
+  line-height: 1.4;
+}
+
 main {
   width: 90%;
-
+  max-width: 1200px;
   align-self: center;
 }
 
@@ -68,6 +72,10 @@ nav .container {
 }
 
 .fa-angle-double-down {
-  color: red;
+  color: #f92c85;
   align-self: center;
+}
+
+.fa-angle-double-down:hover {
+  cursor: pointer;
 }
