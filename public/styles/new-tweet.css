@@ -9,6 +9,7 @@
   margin-top: 6px;
   margin-bottom: 10px;
   resize: none;
+  color: #f92c85;
 }
 
 #tweet-text:focus {

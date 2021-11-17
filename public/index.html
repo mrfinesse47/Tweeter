@@ -36,6 +36,12 @@
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.6.7/jquery.timeago.min.js"
+      integrity="sha512-RlGrSmkje9EE/FXpJKWf0fvOlg4UULy/blvNsviBX9LFwMj/uewXVoanRbxTIRDXy/0A3fBQppTmJ/qOboJzmA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -57,6 +63,8 @@
       </div>
     </nav>
 
+    <!-- User Welcome Header -->
+
     <header class="user-welcome">
       <div class="container">
         <img class="avatar" src="/images/profile-hex.png" />
@@ -68,13 +76,14 @@
       </div>
     </header>
 
-    <!-- Page-specific (main) content here -->
     <main class="tweets container">
-      <!-- A new tweet -->
+      <!-- Main Page Container -->
+
+      <!-- New Tweet section and Form-->
 
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form action="/tweets" method="POST">
+        <form id="post-tweet" action="/tweets" method="POST">
           <div class="input-container">
             <label for="tweet-text">What are you humming about?</label>
             <textarea name="text" id="tweet-text"></textarea>
@@ -85,87 +94,98 @@
           </div>
         </form>
       </section>
-      <article class="tweet">
-        <div class="container">
-          <header>
-            <div>
-              <i class="fab fa-angellist fa-3x"></i>
-              <p class="name">Person</p>
+
+      <!-- Previous Tweets -->
+
+      <section id="tweets-container">
+        <article class="tweet">
+          <div class="container">
+            <header>
+              <div>
+                <i class="fab fa-angellist fa-3x"></i>
+                <p class="name">Person</p>
+              </div>
+              <div>
+                <p class="handle">@Hipster</p>
+              </div>
+            </header>
+            <div class="content">
+              <p>
+                unicorn venmo thundercats live-edge drinking vinegar chillwave.
+                Hoodie coloring book DIY, venmo helvetica pork belly gochujang
+                jean shorts crucifix craft beer chillwave.
+              </p>
             </div>
-            <div>
-              <p class="handle">@Hipster</p>
-            </div>
-          </header>
-          <div class="content">
-            <p>
-              unicorn venmo thundercats live-edge drinking vinegar chillwave.
-              Hoodie coloring book DIY, venmo helvetica pork belly gochujang
-              jean shorts crucifix craft beer chillwave.
-            </p>
+            <footer>
+              <div><p>10 days ago</p></div>
+              <div class="icons">
+                <i class="fa-solid fa-flag"></i>
+                <i class="fas fa-retweet"></i><i class="fas fa-heart"></i>
+              </div>
+            </footer>
           </div>
-          <footer>
-            <div><p>10 days ago</p></div>
-            <div class="icons">
-              <i class="fa-solid fa-flag"></i>
-              <i class="fas fa-retweet"></i><i class="fas fa-heart"></i>
+        </article>
+
+        <!-- Next Tweet -->
+
+        <article class="tweet">
+          <div class="container">
+            <header>
+              <div>
+                <i class="fab fa-angellist fa-3x"></i>
+                <p class="name">Person</p>
+              </div>
+              <div>
+                <p class="handle">@Hipster</p>
+              </div>
+            </header>
+            <div class="content">
+              <p>
+                unicorn venmo thundercats live-edge drinking vinegar chillwave.
+                Hoodie coloring book DIY, venmo helvetica pork belly gochujang
+                jean shorts crucifix craft beer chillwave.
+              </p>
             </div>
-          </footer>
-        </div>
-      </article>
-      <article class="tweet">
-        <div class="container">
-          <header>
-            <div>
-              <i class="fab fa-angellist fa-3x"></i>
-              <p class="name">Person</p>
-            </div>
-            <div>
-              <p class="handle">@Hipster</p>
-            </div>
-          </header>
-          <div class="content">
-            <p>
-              unicorn venmo thundercats live-edge drinking vinegar chillwave.
-              Hoodie coloring book DIY, venmo helvetica pork belly gochujang
-              jean shorts crucifix craft beer chillwave.
-            </p>
+            <footer>
+              <div><p>10 days ago</p></div>
+              <div class="icons">
+                <i class="fa-solid fa-flag"></i>
+                <i class="fas fa-retweet"></i><i class="fas fa-heart"></i>
+              </div>
+            </footer>
           </div>
-          <footer>
-            <div><p>10 days ago</p></div>
-            <div class="icons">
-              <i class="fa-solid fa-flag"></i>
-              <i class="fas fa-retweet"></i><i class="fas fa-heart"></i>
+        </article>
+
+        <!-- Next Tweet -->
+
+        <article class="tweet">
+          <div class="container">
+            <header>
+              <div>
+                <i class="fab fa-angellist fa-3x"></i>
+                <p class="name">Person</p>
+              </div>
+              <div>
+                <p class="handle">@Hipster</p>
+              </div>
+            </header>
+            <div class="content">
+              <p>
+                unicorn venmo thundercats live-edge drinking vinegar chillwave.
+                Hoodie coloring book DIY, venmo helvetica pork belly gochujang
+                jean shorts crucifix craft beer chillwave.
+              </p>
             </div>
-          </footer>
-        </div>
-      </article>
-      <article class="tweet">
-        <div class="container">
-          <header>
-            <div>
-              <i class="fab fa-angellist fa-3x"></i>
-              <p class="name">Person</p>
-            </div>
-            <div>
-              <p class="handle">@Hipster</p>
-            </div>
-          </header>
-          <div class="content">
-            <p>
-              unicorn venmo thundercats live-edge drinking vinegar chillwave.
-              Hoodie coloring book DIY, venmo helvetica pork belly gochujang
-              jean shorts crucifix craft beer chillwave.
-            </p>
+            <footer>
+              <div><p>10 days ago</p></div>
+              <div class="icons">
+                <i class="fa-solid fa-flag"></i>
+                <i class="fas fa-retweet"></i><i class="fas fa-heart"></i>
+              </div>
+            </footer>
           </div>
-          <footer>
-            <div><p>10 days ago</p></div>
-            <div class="icons">
-              <i class="fa-solid fa-flag"></i>
-              <i class="fas fa-retweet"></i><i class="fas fa-heart"></i>
-            </div>
-          </footer>
-        </div>
-      </article>
+        </article>
+      </section>
     </main>
   </body>
 </html>
