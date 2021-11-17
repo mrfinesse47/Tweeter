@@ -26,56 +26,10 @@ body {
   flex-direction: column;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
-nav {
-  height: 120px;
-  width: 100%;
-  background-color: #5ebec4;
-  z-index: 1;
-  padding: 1.5em;
-
-  /* for tweeter logo */
-}
-
 p {
   line-height: 1.4;
 }
 
-main {
-  width: 90%;
-  max-width: 1200px;
-  align-self: center;
-}
-
-#new-tweeter {
-  color: #ffffff;
-}
-
-#logo {
-  font-family: "Bungee", cursive;
-  color: #ffffff;
-  font-size: 36px;
-}
-
-nav .container {
-  display: flex;
-  margin-top: 5px;
-  justify-content: space-between;
-}
-
-.container .vertical {
-  display: flex;
-  flex-direction: column;
-}
-
-.fa-angle-double-down {
-  color: #f92c85;
-  align-self: center;
-}
-
-.fa-angle-double-down:hover {
-  cursor: pointer;
-}
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */

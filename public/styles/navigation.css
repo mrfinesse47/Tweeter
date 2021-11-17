@@ -1,0 +1,48 @@
+nav {
+  height: 120px;
+  width: 100%;
+  background-color: #5ebec4;
+  z-index: 1;
+  padding: 1.5em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  /* for tweeter logo */
+}
+
+main {
+  width: 90%;
+  max-width: 1200px;
+  align-self: center;
+}
+
+#new-tweeter {
+  color: #ffffff;
+}
+
+#logo {
+  font-family: "Bungee", cursive;
+  color: #ffffff;
+  font-size: 36px;
+}
+
+nav .container {
+  display: flex;
+  margin-top: 5px;
+  justify-content: space-between;
+}
+
+.container .vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.fa-angle-double-down {
+  color: #f92c85;
+  align-self: center;
+}
+
+.fa-angle-double-down:hover {
+  cursor: pointer;
+}
