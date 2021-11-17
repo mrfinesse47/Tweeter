@@ -42,8 +42,21 @@ $(document).ready(function () {
   };
 
   $("#post-tweet").submit(function (event) {
-    alert("Handler for .submit() called.");
     event.preventDefault();
+    console.log($(this).serialize());
+
+    $.ajax({
+      url: "/tweets/",
+      type: "POST",
+      data: jQuery(this).serialize(),
+    })
+      .done(function () {
+        // Handle Success
+        console.log("success");
+      })
+      .fail(function (xhr, status, error) {
+        console.log(error, "status:", status);
+      });
   });
 
   // Test / driver code (temporary). Eventually will get this from the server.
