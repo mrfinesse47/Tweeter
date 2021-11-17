@@ -41,7 +41,7 @@
   margin: 0 10px;
   align-self: center;
   font-weight: 600;
-  color: #b3b3b3;
+  color: #f92c85;
 }
 
 /* Tweet Content */
@@ -51,6 +51,7 @@
   font-weight: 600;
   border-bottom: 5px solid #5ebec4;
   width: 100%;
+  word-wrap: break-word;
 }
 .content p {
   padding: 0px 10px;
