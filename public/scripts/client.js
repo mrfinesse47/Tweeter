@@ -49,34 +49,71 @@ const renderTweets = (tweets) => {
 
 //Loads tweets from /tweets using AJAX
 
-const loadTweets = () => {
+const loadTweets = (renderTweets) => {
   $.ajax(" /tweets", { method: "GET" }).then(function (tweets) {
     renderTweets(tweets);
   });
 };
 
+//function to check if the tweetText is valid
+
+const isValidTextInput = (tweetText) => {
+  if (tweetText.length === 0) {
+    alert("you provided no content for your tweet");
+    return false;
+  }
+
+  if (tweetText.length >= 140) {
+    alert("your tweet is too long, less than 140 characters are allowed!");
+    return false;
+  }
+  return true;
+};
+
+//initilizes the  JQuery Event listener for form submission
+
 const newTweetHandler = () => {
   $("#post-tweet").submit(function (event) {
     event.preventDefault();
 
-    $.ajax({
-      url: "/tweets/",
-      type: "POST",
-      data: jQuery(this).serialize(),
-    })
-      .done(function () {
-        // Handle Success
-        console.log("success");
+    const textArea = $(this).find("#tweet-text");
+    const tweetText = textArea.val();
+    const counter = $(this).find(".counter");
+
+    if (isValidTextInput(tweetText)) {
+      //if the input text is valid perform the  AJAX  request
+
+      $.ajax({
+        url: "/tweets/",
+        type: "POST",
+        data: jQuery(this).serialize(),
       })
-      .fail(function (xhr, status, error) {
-        console.log(error, "status:", status);
-      });
+        .done(function () {
+          // Handle Success
+          textArea.val("");
+          counter.val(0);
+          console.log("success");
+        })
+        .fail(function (xhr, status, error) {
+          console.log(error, "status:", status);
+        });
+    }
   });
 };
 
+//prevents the user from pressing enter on the text area which messes up the count length
+//and makes the text disappear
+
 $(document).ready(function () {
+  $("#tweet-text").keypress(function (event) {
+    if (event.keyCode === 10 || event.keyCode === 13) {
+      event.preventDefault();
+    }
+  });
+
   //loads and renders all  the tweets in the db to index.html
-  loadTweets();
+  //render tweets is passed in as a callback
+  loadTweets(renderTweets);
 
   newTweetHandler(); //initilizes the new tweet form behaviour
 });
