@@ -4,6 +4,13 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+//to prevent cross site scripting attacks
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 const createTweetElement = ({ user, content, created_at }) => {
   //destructuring for easy variable naming
   const { name, handle, avatars } = user;
@@ -23,9 +30,7 @@ const createTweetElement = ({ user, content, created_at }) => {
       </div>
     </header>
     <div class="content">
-      <p>
-       ${text}
-      </p>
+    <p>${escape(text)}</p>
     </div>
     <footer>
       <div><p>${$.timeago(created_at)}</p></div>
@@ -41,7 +46,10 @@ const createTweetElement = ({ user, content, created_at }) => {
 //renders the tweets to index.html in the #tweets-container id
 
 const renderTweets = (tweets) => {
-  tweets.forEach((tweet) => {
+  $("#tweets-container").html("");
+  const newestToOldest = tweets.sort((a, b) => b.created_at - a.created_at); //sorts tweets newest to oldest
+
+  newestToOldest.forEach((tweet) => {
     const $tweet = createTweetElement(tweet);
     $("#tweets-container").append($tweet);
   });
@@ -70,6 +78,12 @@ const isValidTextInput = (tweetText) => {
   return true;
 };
 
+//renders the UI
+
+const render = () => {
+  loadTweets(renderTweets);
+};
+
 //initilizes the  JQuery Event listener for form submission
 
 const newTweetHandler = () => {
@@ -92,7 +106,7 @@ const newTweetHandler = () => {
           // Handle Success
           textArea.val("");
           counter.val(0);
-          console.log("success");
+          render();
         })
         .fail(function (xhr, status, error) {
           console.log(error, "status:", status);
@@ -113,7 +127,8 @@ $(document).ready(function () {
 
   //loads and renders all  the tweets in the db to index.html
   //render tweets is passed in as a callback
-  loadTweets(renderTweets);
 
   newTweetHandler(); //initilizes the new tweet form behaviour
+
+  render(); //re renders the UI
 });
