@@ -141,6 +141,8 @@ $(document).ready(function () {
   //hide the new tweet input box on page load
   $(".new-tweet").hide();
 
+  //hides the double arrow up icon that  appears when user is scrolled half way down the page
+
   $("#scroll-up").hide();
 
   //this shows or hides the new tweet textarea based on the  "write a new tweer button"
@@ -162,6 +164,8 @@ $(document).ready(function () {
     }
   });
 
+  //this makes the scroll up button appear once  the  user is half way down the page
+
   $(window).scroll(function () {
     const scrollBarPos = $(this).scrollTop();
     if (scrollBarPos > 580) {
@@ -178,6 +182,5 @@ $(document).ready(function () {
   });
 
   newTweetHandler(); //new-tweet form submission set up
-
   render(); //renders the tweets from db and resets counter and input text
 });

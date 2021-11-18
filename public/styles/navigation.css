@@ -64,3 +64,8 @@ nav .container {
   justify-content: center;
   align-items: center;
 }
+
+#scroll-up:hover {
+  cursor: pointer;
+  color: white;
+}
