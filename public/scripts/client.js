@@ -46,7 +46,7 @@ const createTweetElement = ({ user, content, created_at }) => {
 //renders the tweets to index.html in the #tweets-container id
 
 const renderTweets = (tweets) => {
-  $("#tweets-container").html("");
+  $("#tweets-container").empty();
   const newestToOldest = tweets.sort((a, b) => b.created_at - a.created_at); //sorts tweets newest to oldest
   newestToOldest.forEach((tweet) => {
     const $tweet = createTweetElement(tweet);
@@ -80,6 +80,9 @@ const isValidTextInput = (tweetText) => {
   return true;
 };
 
+//controls the error message box, if isError is true it will display with message
+// if it is false it will remove the error message box
+
 const errorHandler = (isError, message) => {
   if (isError) {
     $("#error-message").slideDown();
@@ -89,11 +92,13 @@ const errorHandler = (isError, message) => {
   }
 };
 
-//renders the UI
+//used to re-render the UI after the user  submits a tweet
+//or renders the tweets on page load
 
 const render = () => {
   $("#tweet-text").val("");
   $(".counter").val(0);
+  $(".new-tweet").slideUp();
   loadTweets(renderTweets);
   errorHandler(false);
 };
@@ -117,7 +122,7 @@ const newTweetHandler = () => {
       })
         .done(function () {
           // Handle Success
-          render(this); //re render tweets
+          render(); //re render tweets
         })
         .fail(function (xhr, status, error) {
           console.log(error, "status:", status);
@@ -133,16 +138,29 @@ $(document).ready(function () {
   //hide the error message on page load
   $("#error-message").hide();
 
-  $("#tweet-text").keypress(function (event) {
+  //hide the new tweet input box on page load
+  $(".new-tweet").hide();
+
+  //this shows or hides the new tweet textarea based on the  "write a new tweer button"
+
+  $("#show-new-tweet").click(function () {
+    const $newTweet = $(".new-tweet");
+    if ($newTweet.is(":visible")) {
+      $newTweet.slideUp();
+    } else {
+      $newTweet.slideDown();
+    }
+  });
+
+  //prevent the user from using the enter key in the text area
+
+  $("#tweet-text").keydown(function (event) {
     if (event.keyCode === 10 || event.keyCode === 13) {
       event.preventDefault();
     }
   });
 
-  //loads and renders all  the tweets in the db to index.html
-  //render tweets is passed in as a callback
+  newTweetHandler(); //new-tweet form submission set up
 
-  newTweetHandler(); //initilizes the new tweet form behaviour
-
-  render(); //renders the tweets from db
+  render(); //renders the tweets from db and resets counter and input text
 });

@@ -21,6 +21,10 @@ main {
   color: #ffffff;
 }
 
+#new-tweeter:hover {
+  cursor: pointer;
+}
+
 #logo {
   font-family: "Bungee", cursive;
   color: #ffffff;
@@ -45,4 +49,5 @@ nav .container {
 
 .fa-angle-double-down:hover {
   cursor: pointer;
+  color: #ffffff;
 }

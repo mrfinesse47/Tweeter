@@ -10,7 +10,8 @@
 $(document).ready(function () {
   // --- our code goes here ---
   //On the key change event where we are capturing the total number of characters left and changing the color to red if they go less than 0
-  $("#tweet-text").keydown(function () {
+  $("#tweet-text").keyup(function () {
+    //works better with key up so I can count after the character is in
     let charCount = this.value.length;
     const counter = $(this).parentsUntil(".new-tweet").find(".counter");
     if (charCount > 140) {
