@@ -168,7 +168,7 @@ $(document).ready(function () {
 
   $(window).scroll(function () {
     const scrollBarPos = $(this).scrollTop();
-    if (scrollBarPos > 580) {
+    if (scrollBarPos > 500) {
       $("#scroll-up").fadeIn(1000);
       $("#navigation").slideUp("slow");
     } else {

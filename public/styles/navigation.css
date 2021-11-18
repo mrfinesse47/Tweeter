@@ -7,14 +7,6 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-
-  /* for tweeter logo */
-}
-
-main {
-  width: 90%;
-  max-width: 1200px;
-  align-self: center;
 }
 
 #new-tweeter {

@@ -32,6 +32,12 @@
   align-content: center;
 }
 
+.tweet img {
+  width: 46px;
+  height: 46px;
+  align-self: center;
+}
+
 .tweet .name {
   align-self: center;
   padding-left: 10px;
