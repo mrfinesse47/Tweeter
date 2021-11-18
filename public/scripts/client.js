@@ -85,10 +85,10 @@ const isValidTextInput = (tweetText) => {
 
 const errorHandler = (isError, message) => {
   if (isError) {
-    $("#error-message").slideDown();
-    $("#error-message p").text(message);
+    $("#error-message").slideDown("slow");
+    $("#error-message p").text(`⚠️  ${message}   ⚠️`);
   } else {
-    $("#error-message").slideUp();
+    $("#error-message").slideUp("slow");
   }
 };
 
@@ -141,6 +141,8 @@ $(document).ready(function () {
   //hide the new tweet input box on page load
   $(".new-tweet").hide();
 
+  $("#scroll-up").hide();
+
   //this shows or hides the new tweet textarea based on the  "write a new tweer button"
 
   $("#show-new-tweet").click(function () {
@@ -158,6 +160,21 @@ $(document).ready(function () {
     if (event.keyCode === 10 || event.keyCode === 13) {
       event.preventDefault();
     }
+  });
+
+  $(window).scroll(function () {
+    const scrollBarPos = $(this).scrollTop();
+    if (scrollBarPos > 580) {
+      $("#scroll-up").fadeIn(1000);
+      $("#navigation").slideUp("slow");
+    } else {
+      $("#scroll-up").fadeOut(1000);
+      $("#navigation").slideDown("slow");
+    }
+  });
+
+  $("#scroll-up").click(function () {
+    $("html, body").animate({ scrollTop: 0 }, 1200);
   });
 
   newTweetHandler(); //new-tweet form submission set up
