@@ -1,19 +1,25 @@
 #tweet-text {
   width: 100%;
-  height: 1.5em;
+  height: 3em;
   border-width: 0px;
   border-bottom: 5px solid #5ebec4;
   background-color: #fdf5df;
   border-radius: 4px;
   box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   resize: none;
   color: #f92c85;
 }
 
 #tweet-text:focus {
-  outline: 1px solid #f92c85;
+  outline: none;
+  background-color: #ffeebe;
+}
+
+#tweet-text:hover {
+  outline: none;
+  background-color: #ffeebe;
 }
 
 .new-tweet label {

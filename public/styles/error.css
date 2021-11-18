@@ -1,7 +1,7 @@
 #error-message {
   border: 5px solid #f92c85;
   color: #f92c85;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 #error-message container {
@@ -11,4 +11,5 @@
 #error-message p {
   width: 90%;
   margin: 10px auto;
+  font-weight: 600;
 }
