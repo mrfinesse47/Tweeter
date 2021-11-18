@@ -48,7 +48,6 @@ const createTweetElement = ({ user, content, created_at }) => {
 const renderTweets = (tweets) => {
   $("#tweets-container").html("");
   const newestToOldest = tweets.sort((a, b) => b.created_at - a.created_at); //sorts tweets newest to oldest
-
   newestToOldest.forEach((tweet) => {
     const $tweet = createTweetElement(tweet);
     $("#tweets-container").append($tweet);
@@ -57,9 +56,9 @@ const renderTweets = (tweets) => {
 
 //Loads tweets from /tweets using AJAX
 
-const loadTweets = (renderTweets) => {
+const loadTweets = (callback) => {
   $.ajax(" /tweets", { method: "GET" }).then(function (tweets) {
-    renderTweets(tweets);
+    callback(tweets);
   });
 };
 
@@ -67,21 +66,36 @@ const loadTweets = (renderTweets) => {
 
 const isValidTextInput = (tweetText) => {
   if (tweetText.length === 0) {
-    alert("you provided no content for your tweet");
+    errorHandler(true, "You must input some text in order to tweet!");
     return false;
   }
 
   if (tweetText.length >= 140) {
-    alert("your tweet is too long, less than 140 characters are allowed!");
+    errorHandler(
+      true,
+      "characters of tweet length exceeds allowed limit! Please use less than 140 characters."
+    );
     return false;
   }
   return true;
 };
 
+const errorHandler = (isError, message) => {
+  if (isError) {
+    $("#error-message").slideDown();
+    $("#error-message p").text(message);
+  } else {
+    $("#error-message").slideUp();
+  }
+};
+
 //renders the UI
 
 const render = () => {
+  $("#tweet-text").val("");
+  $(".counter").val(0);
   loadTweets(renderTweets);
+  errorHandler(false);
 };
 
 //initilizes the  JQuery Event listener for form submission
@@ -92,7 +106,6 @@ const newTweetHandler = () => {
 
     const textArea = $(this).find("#tweet-text");
     const tweetText = textArea.val();
-    const counter = $(this).find(".counter");
 
     if (isValidTextInput(tweetText)) {
       //if the input text is valid perform the  AJAX  request
@@ -104,9 +117,7 @@ const newTweetHandler = () => {
       })
         .done(function () {
           // Handle Success
-          textArea.val("");
-          counter.val(0);
-          render();
+          render(this); //re render tweets
         })
         .fail(function (xhr, status, error) {
           console.log(error, "status:", status);
@@ -119,6 +130,9 @@ const newTweetHandler = () => {
 //and makes the text disappear
 
 $(document).ready(function () {
+  //hide the error message on page load
+  $("#error-message").hide();
+
   $("#tweet-text").keypress(function (event) {
     if (event.keyCode === 10 || event.keyCode === 13) {
       event.preventDefault();
@@ -130,5 +144,5 @@ $(document).ready(function () {
 
   newTweetHandler(); //initilizes the new tweet form behaviour
 
-  render(); //re renders the UI
+  render(); //renders the tweets from db
 });

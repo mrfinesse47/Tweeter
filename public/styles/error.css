@@ -1,0 +1,14 @@
+#error-message {
+  border: 5px solid #f92c85;
+  color: #f92c85;
+  margin-top: 20px;
+}
+
+#error-message container {
+  margin: 10px 20px;
+}
+
+#error-message p {
+  width: 90%;
+  margin: 10px auto;
+}
