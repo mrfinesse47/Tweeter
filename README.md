@@ -1,6 +1,6 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple, single-page Twitter clone. Its lots of fun, clone it and run it to find out what it is all about!
 
 ## Features
 
@@ -28,6 +28,9 @@ Tweeter is a simple, single-page Twitter clone.
 
 !["User has scrolled down the page"](https://github.com/mrfinesse47/Tweeter/blob/main/docs/5.png?raw=true)
 
+## Things to Note
+
+-This project was mainly meant to be an exercise in using the Jquery library and other front end technologies, and as such there are a few back end features left out, such as user log in.
 
 
 ## Getting Started
