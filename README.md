@@ -16,15 +16,15 @@ Tweeter is a simple, single-page Twitter clone.
 
 ## Screenshots
 
-1. The mobile view
+### 1. The mobile view
 
 !["The Mobile View"](https://github.com/mrfinesse47/Tweeter/blob/main/docs/1.png?raw=true)
 
-2. An error message displayed to the user for going over the allowed 140 characters.
+### 2. An error message displayed to the user for going over the allowed 140 characters.
 
 !["An error message"](https://github.com/mrfinesse47/Tweeter/blob/main/docs/3.png?raw=true)
 
-3. A few tweets and the button is displayed which allows you to auto-scroll back to the top. Also notice the navigation bar is now hidden.
+### 3. A few tweets and the button is displayed which allows you to auto-scroll back to the top. Also notice the navigation bar is now hidden.
 
 !["User has scrolled down the page"](https://github.com/mrfinesse47/Tweeter/blob/main/docs/5.png?raw=true)
 
