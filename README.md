@@ -24,7 +24,7 @@ Tweeter is a simple, single-page Twitter clone. Its lots of fun, clone it and ru
 
 !["An error message"](https://github.com/mrfinesse47/Tweeter/blob/main/docs/3.png?raw=true)
 
-### 3. A few tweets and the button is displayed which allows you to auto-scroll back to the top. Also notice the navigation bar is now hidden.
+### 3. The button is displayed which allows you to auto-scroll back to the top. The navigation bar is now hidden.
 
 !["User has scrolled down the page"](https://github.com/mrfinesse47/Tweeter/blob/main/docs/5.png?raw=true)
 
