@@ -1,5 +1,4 @@
 /* styling for the new tweet form */
-
 #tweet-text {
   width: 100%;
   height: 3em;
@@ -16,44 +15,39 @@
 
 #tweet-text:focus {
   outline: none;
-  background-color: #ffeebe;
+  background-color: #fdf5df;
 }
 
 #tweet-text:hover {
   outline: none;
-  background-color: #ffeebe;
+  background-color: #fdf5df;
 }
 
 .new-tweet label {
   font-weight: 600;
 }
-
 .new-tweet .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 20px;
 }
-
-.btn-submit {
+.new-tweet .btn-submit {
   background-color: #f92c85;
   padding: 0.25em 0.5em;
   border: 0px;
-  color: #f4f1ec;
+  color: #fdf5df;
   font-weight: 600;
 }
-
-.btn-submit:hover {
+.new-tweet .btn-submit:hover {
   cursor: pointer;
   color: #5ebec4;
 }
-
-.counter {
+.new-tweet .counter {
   font-weight: 600;
   padding-right: 5px;
   font-family: "Bungee", cursive;
 }
-
-.over-limit {
+.new-tweet .over-limit {
   color: #f92c85;
 }

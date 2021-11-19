@@ -1,15 +1,12 @@
 /* Styling for the error messages that pop up */
-
 #error-message {
   color: #f92c85;
   margin-top: 40px;
   height: 2.5em;
 }
-
 #error-message container {
   margin: 10px 20px;
 }
-
 #error-message p {
   text-align: center;
   margin: 10px auto;

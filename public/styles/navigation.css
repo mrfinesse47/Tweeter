@@ -1,5 +1,4 @@
 /* navigation bar styling */
-
 nav {
   height: 120px;
   width: 100%;
@@ -10,44 +9,36 @@ nav {
   top: 0;
   width: 100%;
 }
-
-#new-tweeter {
+nav #new-tweeter {
   color: #ffffff;
 }
-
-#new-tweeter:hover {
+nav #new-tweeter:hover {
   cursor: pointer;
 }
-
-#logo {
+nav #logo {
   font-family: "Bungee", cursive;
   color: #ffffff;
   font-size: 36px;
 }
-
 nav .container {
   display: flex;
   margin-top: 5px;
   justify-content: space-between;
 }
-
-.container .vertical {
+nav .container .vertical {
   display: flex;
   flex-direction: column;
 }
-
-.fa-angle-double-down {
+nav .fa-angle-double-down {
   color: #f92c85;
   align-self: center;
 }
-
-.fa-angle-double-down:hover {
+nav .fa-angle-double-down:hover {
   cursor: pointer;
   color: #ffffff;
 }
 
 /* styling for the scroll up button that appears in the bottom right of the page */
-
 #scroll-up {
   position: fixed;
   bottom: 5%;
@@ -63,5 +54,5 @@ nav .container {
 
 #scroll-up:hover {
   cursor: pointer;
-  color: white;
+  color: #ffffff;
 }

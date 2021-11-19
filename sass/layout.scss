@@ -1,7 +1,12 @@
+// sass imports
+
+@import "./variables.scss";
+
+// Global layout stuff * /
+
 html {
   box-sizing: border-box;
 }
-
 *,
 *:before,
 *:after {
@@ -9,9 +14,10 @@ html {
 }
 
 /* General HTML tags */
+
 body {
-  color: #5ebec4;
-  background-color: #fdf5df;
+  color: $primary-color;
+  background-color: $light-color;
   font-size: 24px;
   font-family: "Source Sans Pro", sans-serif;
   display: flex;
@@ -35,6 +41,7 @@ main {
 }
 
 /* Media Queries */
+
 @media screen and (min-width: 1024px) {
   .content-wrapper {
     flex-direction: row;
@@ -70,31 +77,29 @@ main {
     margin: 140px 5% 0 0;
   }
 }
+
 /* media queries for small screens */
+
 @media only screen and (max-width: 600px) {
   #logo {
     font-size: 24px;
   }
-
   #new-tweeter {
     font-size: 20px;
   }
-
   nav {
     height: 100px;
-  }
-  nav .container {
-    margin-top: 0px;
+    .container {
+      margin-top: 0px;
+    }
   }
 
   .user-welcome {
     display: none;
   }
-
   .tweets.container {
     margin-top: 120px;
   }
-
   #error-message {
     margin-top: 0;
     font-size: 16px;
@@ -102,17 +107,19 @@ main {
 
   .tweet {
     border-width: 2px;
-  }
-  .tweet img {
-    width: 30px;
-    height: 30px;
-    align-self: center;
-  }
-  .tweet .handle {
-    font-size: 16px;
-  }
-  .tweet .content {
-    font-size: 18px;
-    border-width: 2px;
+    img {
+      width: 30px;
+      height: 30px;
+      align-self: center;
+    }
+
+    .handle {
+      font-size: 16px;
+    }
+
+    .content {
+      font-size: 18px;
+      border-width: 2px;
+    }
   }
 }

@@ -1,0 +1,64 @@
+// sass imports
+
+@import "./variables.scss";
+
+/* styling for the new tweet form */
+
+#tweet-text {
+  width: 100%;
+  height: 3em;
+  border-width: 0px;
+  border-bottom: 5px solid $primary-color;
+  background-color: $light-color;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  resize: none;
+  color: $accent-color;
+}
+
+#tweet-text:focus {
+  outline: none;
+  background-color: $light-color;
+}
+
+#tweet-text:hover {
+  outline: none;
+  background-color: $light-color;
+}
+.new-tweet {
+  label {
+    font-weight: 600;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+
+  .btn-submit {
+    background-color: $accent-color;
+    padding: 0.25em 0.5em;
+    border: 0px;
+    color: $light-color;
+    font-weight: 600;
+  }
+
+  .btn-submit:hover {
+    cursor: pointer;
+    color: #5ebec4;
+  }
+
+  .counter {
+    font-weight: 600;
+    padding-right: 5px;
+    font-family: "Bungee", cursive;
+  }
+
+  .over-limit {
+    color: $accent-color;
+  }
+}

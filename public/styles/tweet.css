@@ -1,5 +1,4 @@
 /* The outermost div for a tweet */
-
 .tweet {
   border: 5px solid #5ebec4;
   margin: 20px 0 50px;
@@ -9,7 +8,12 @@
 }
 
 /* Container used to give the tweet margins */
-
+.tweet {
+  /* Tweet Header */
+  /* Tweet Content */
+  /* Tweet Footer */
+  /* Tweet icons in the footer */
+}
 .tweet .container {
   width: 97%;
   margin: 2% auto 0;
@@ -17,55 +21,42 @@
   flex-direction: column;
   justify-content: center;
 }
-
-/* Tweet Header */
-
 .tweet header {
   display: flex;
   justify-content: space-between;
   font-weight: 300;
   padding: 0px 10px;
 }
-
 .tweet header div {
   display: flex;
   align-content: center;
 }
-
 .tweet img {
   width: 46px;
   height: 46px;
   align-self: center;
 }
-
 .tweet .name {
   align-self: center;
   padding-left: 10px;
 }
-
 .tweet .handle {
   margin: 0 10px;
   align-self: center;
   font-weight: 600;
   color: #f92c85;
 }
-
-/* Tweet Content */
-
-.content {
+.tweet .content {
   align-self: center;
   font-weight: 600;
   border-bottom: 5px solid #5ebec4;
   width: 100%;
   word-wrap: break-word;
 }
-.content p {
+.tweet .content p {
   padding: 0px 10px;
 }
-
-/* Tweet Footer */
-
-footer {
+.tweet footer {
   display: flex;
   justify-content: space-between;
   align-content: center;
@@ -73,29 +64,24 @@ footer {
   font-weight: 600;
   padding: 0px 10px;
 }
-
-/* Tweet icons in the footer */
-
-footer .icons {
+.tweet footer .icons {
   display: flex;
   width: 100px;
   justify-content: space-between;
 }
-
-footer i {
+.tweet footer i {
   margin: auto;
   width: 20%;
 }
 
 /* Tweet cool shadow effect sand style */
-
 footer i:hover {
   cursor: pointer;
   color: #f92c85;
 }
 
 .tweet:hover {
-  -webkit-box-shadow: 10px 12px 36px -17px rgba(249, 44, 133, 1);
-  -moz-box-shadow: 10px 12px 36px -17px rgba(249, 44, 133, 1);
-  box-shadow: 10px 12px 36px -17px rgba(249, 44, 133, 1);
+  -webkit-box-shadow: 10px 12px 36px -17px #f92c85;
+  -moz-box-shadow: 10px 12px 36px -17px #f92c85;
+  box-shadow: 10px 12px 36px -17px #f92c85;
 }

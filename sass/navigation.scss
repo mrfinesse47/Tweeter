@@ -1,0 +1,70 @@
+// sass imports
+
+@import "./variables.scss";
+
+/* navigation bar styling */
+
+nav {
+  height: 120px;
+  width: 100%;
+  background-color: $primary-color;
+  z-index: 1;
+  padding: 1.5em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  #new-tweeter {
+    color: $lightest-color;
+  }
+
+  #new-tweeter:hover {
+    cursor: pointer;
+  }
+
+  #logo {
+    font-family: "Bungee", cursive;
+    color: $lightest-color;
+    font-size: 36px;
+  }
+
+  .container {
+    display: flex;
+    margin-top: 5px;
+    justify-content: space-between;
+  }
+
+  .container .vertical {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fa-angle-double-down {
+    color: $accent-color;
+    align-self: center;
+  }
+
+  .fa-angle-double-down:hover {
+    cursor: pointer;
+    color: $lightest-color;
+  }
+}
+
+/* styling for the scroll up button that appears in the bottom right of the page */
+
+#scroll-up {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  background-color: $accent-color;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#scroll-up:hover {
+  cursor: pointer;
+  color: $lightest-color;
+}
