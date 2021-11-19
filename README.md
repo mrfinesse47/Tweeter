@@ -30,7 +30,7 @@ Tweeter is a simple, single-page Twitter clone. Its lots of fun, clone it and ru
 
 ## Things to Note
 
--This project was mainly meant to be an exercise in using the Jquery library and other front end technologies, and as such there are a few back end features left out, such as user log in.
+-This project was mainly meant to be an exercise in using the jQuery library and other front end technologies, and as such there are a few back end features left out, such as user log in.
 
 
 ## Getting Started
