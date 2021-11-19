@@ -3,7 +3,7 @@ $(document).ready(function () {
   //On the keyup event
   $("#tweet-text").keyup(function () {
     //works better with key up so I can count after the character is in
-    let charCount = this.value.length;
+    const charCount = this.value.length;
     //using DOM traversal to find the counter
     const counter = $(this).parentsUntil(".new-tweet").find(".counter");
     if (charCount > 140) {

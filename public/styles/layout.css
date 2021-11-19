@@ -32,6 +32,7 @@ main {
   align-self: center;
 }
 
+/* the wrapper that comes after the nav bar */
 .content-wrapper {
   display: flex;
   justify-content: center;
@@ -43,82 +44,5 @@ main {
 @media screen and (min-width: 1024px) {
   .content-wrapper {
     flex-direction: row;
-  }
-
-  header.user-welcome {
-    margin: 200px 5%;
-    height: 30vw;
-    width: 50vw;
-    padding-top: 0px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  header.container {
-    margin: 20%;
-    width: 70%;
-    height: 70%;
-  }
-
-  .container h2 {
-    display: block;
-    margin: 0;
-    padding: 0;
-  }
-
-  .avatar {
-    width: 100%;
-  }
-
-  .tweets.container {
-    margin: 140px 5% 0 0;
-  }
-}
-
-/* media queries for small screens */
-
-@media only screen and (max-width: 600px) {
-  #logo {
-    font-size: 24px;
-  }
-  #new-tweeter {
-    font-size: 20px;
-  }
-  nav {
-    height: 100px;
-  }
-  nav .container {
-    margin-top: 0px;
-  }
-
-  .user-welcome {
-    display: none;
-  }
-  .tweets.container {
-    margin-top: 120px;
-  }
-  #error-message {
-    margin-top: 0;
-    font-size: 16px;
-  }
-
-  .tweet img {
-    width: 30px;
-    height: 30px;
-    align-self: center;
-  }
-
-  .tweet .handle {
-    font-size: 16px;
-  }
-
-  .tweet .content {
-    font-size: 18px;
-    border-width: 2px;
-  }
-
-  .tweet {
-    border-width: 2px;
   }
 }

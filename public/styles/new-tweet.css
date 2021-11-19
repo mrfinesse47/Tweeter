@@ -28,12 +28,22 @@
   font-weight: 600;
 }
 
+#new-tweeter {
+  color: #ffffff;
+}
+
+#new-tweeter:hover {
+  cursor: pointer;
+}
+
 .new-tweet .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 20px;
 }
+
+/* new tweet submit button styling */
 
 .btn-submit {
   background-color: #f92c85;
@@ -48,11 +58,15 @@
   color: #5ebec4;
 }
 
+/* styling for character counter */
+
 .counter {
   font-weight: 600;
   padding-right: 5px;
   font-family: "Bungee", cursive;
 }
+
+/* applied via javascript when over character limit */
 
 .over-limit {
   color: #f92c85;

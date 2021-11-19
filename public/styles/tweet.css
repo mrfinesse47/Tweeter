@@ -87,7 +87,7 @@ footer i {
   width: 20%;
 }
 
-/* Tweet cool shadow effect sand style */
+/* Tweet cool shadow effect and style */
 
 footer i:hover {
   cursor: pointer;
@@ -98,4 +98,39 @@ footer i:hover {
   -webkit-box-shadow: 10px 12px 36px -17px rgba(249, 44, 133, 1);
   -moz-box-shadow: 10px 12px 36px -17px rgba(249, 44, 133, 1);
   box-shadow: 10px 12px 36px -17px rgba(249, 44, 133, 1);
+}
+
+/* media queries for the list of tweets */
+
+@media screen and (min-width: 1024px) {
+  .tweets.container {
+    margin: 140px 5% 0 0;
+  }
+
+  /* for small screens */
+
+  @media only screen and (max-width: 600px) {
+    .tweets.container {
+      margin-top: 120px;
+    }
+
+    .tweet img {
+      width: 30px;
+      height: 30px;
+      align-self: center;
+    }
+
+    .tweet .handle {
+      font-size: 16px;
+    }
+
+    .tweet .content {
+      font-size: 18px;
+      border-width: 2px;
+    }
+
+    .tweet {
+      border-width: 2px;
+    }
+  }
 }

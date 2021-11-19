@@ -11,14 +11,6 @@ nav {
   width: 100%;
 }
 
-#new-tweeter {
-  color: #ffffff;
-}
-
-#new-tweeter:hover {
-  cursor: pointer;
-}
-
 #logo {
   font-family: "Bungee", cursive;
   color: #ffffff;
@@ -64,4 +56,21 @@ nav .container {
 #scroll-up:hover {
   cursor: pointer;
   color: white;
+}
+
+/* media queries for small screens */
+
+@media only screen and (max-width: 600px) {
+  #logo {
+    font-size: 24px;
+  }
+  #new-tweeter {
+    font-size: 20px;
+  }
+  nav {
+    height: 100px;
+  }
+  nav .container {
+    margin-top: 0px;
+  }
 }
