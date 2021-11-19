@@ -1,7 +1,6 @@
 /*
- * Client-side JS logic goes here
+ * Client-side JS logic
  * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
 //to prevent cross site scripting attacks
@@ -43,7 +42,7 @@ const createTweetElement = ({ user, content, created_at }) => {
 </article>`);
 };
 
-//renders the tweets to index.html in the #tweets-container id
+//sorts and  then renders the tweets to index.html in the #tweets-container id
 
 const renderTweets = (tweets) => {
   $("#tweets-container").empty();
@@ -81,7 +80,7 @@ const isValidTextInput = (tweetText) => {
 };
 
 //controls the error message box, if isError is true it will display with message
-// if it is false it will remove the error message box
+// if it is false it will remove the error message box, message is not required on false
 
 const errorHandler = (isError, message) => {
   if (isError) {
@@ -154,6 +153,9 @@ $(document).ready(function () {
       $newTweet.slideUp();
     } else {
       $newTweet.slideDown();
+      setTimeout(() => {
+        $("#tweet-text").focus();
+      }, 600); //set autofocus after slidedown after 600 ms
     }
   });
 
@@ -177,6 +179,8 @@ $(document).ready(function () {
       $("#navigation").slideDown("slow");
     }
   });
+
+  //gets the scroll-up button to make the browser scroll to the  top of the window smoothly
 
   $("#scroll-up").click(function () {
     $("html, body").animate({ scrollTop: 0 }, 1200);

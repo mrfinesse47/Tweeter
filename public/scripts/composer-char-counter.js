@@ -1,18 +1,10 @@
-//Name:   Character count Javascript file
-//Written By: Rohit Dhand
-// Written on: 15th Nov, 2021
-// Purpose: This script actualy.....
-// Change Log:
-// 1. Changed by : Alex Date: 19th Nov.2021
-//What was changed:
-
 //Will ensure that the document loads before JQuery functions are called.
 $(document).ready(function () {
-  // --- our code goes here ---
-  //On the key change event where we are capturing the total number of characters left and changing the color to red if they go less than 0
+  //On the keyup event
   $("#tweet-text").keyup(function () {
     //works better with key up so I can count after the character is in
     let charCount = this.value.length;
+    //using DOM traversal to find the counter
     const counter = $(this).parentsUntil(".new-tweet").find(".counter");
     if (charCount > 140) {
       const charLeft = 140 - charCount;
@@ -23,5 +15,4 @@ $(document).ready(function () {
       counter.removeClass("over-limit");
     }
   });
-  //On the key change event function finishes.
 });
