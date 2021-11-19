@@ -1,3 +1,5 @@
+/* navigation bar styling */
+
 nav {
   height: 120px;
   width: 100%;
@@ -43,6 +45,8 @@ nav .container {
   cursor: pointer;
   color: #ffffff;
 }
+
+/* styling for the scroll up button that appears in the bottom right of the page */
 
 #scroll-up {
   position: fixed;

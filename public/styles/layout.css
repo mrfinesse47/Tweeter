@@ -1,3 +1,7 @@
+/*
+ * Global layout stuff
+ */
+
 html {
   box-sizing: border-box;
 }
@@ -6,10 +10,6 @@ html {
 *:after {
   box-sizing: inherit;
 }
-
-/*
- * Global layout stuff
- */
 
 /* General HTML tags */
 
@@ -75,6 +75,8 @@ main {
     margin: 140px 5% 0 0;
   }
 }
+
+/* media queries for small screens */
 
 @media only screen and (max-width: 600px) {
   #logo {
