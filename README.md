@@ -4,7 +4,17 @@ Tweeter is a simple, single-page Twitter clone.
 
 ## Features
 
-Users are able to create a tweet and submit to an AJAX Post request, the list of tweets will re-render in real time.
+1. Users are able to create a tweet and submit to an AJAX Post request, the list of tweets will re-render in real time.
+
+2. Application is responsive for small,medium, and large sized screens.
+
+3. There are Error messages that appear if the user violates the maximum allowed characters, or doesn't input anything on the new tweet form.
+
+4. Once the user has scrolled down the navigation bar will disapper, and a button will appear in the bottom right of the page which will allow the user to go back to the top.
+
+5. On a successful Tweet the new tweet form will slide down, and only reappear once the user clicks "Write a new Tweet".
+
+## Screenshots
 
 ## Getting Started
 
