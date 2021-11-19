@@ -125,7 +125,10 @@ const newTweetHandler = () => {
           render(); //re render tweets
         })
         .fail(function (xhr, status, error) {
-          console.log(error, "status:", status);
+          errorHandler(
+            true,
+            "Network Error! status:" + status + ", Please try again."
+          );
         });
     }
   });
@@ -151,6 +154,7 @@ $(document).ready(function () {
     const $newTweet = $(".new-tweet");
     if ($newTweet.is(":visible")) {
       $newTweet.slideUp();
+      errorHandler(false); //if there is a error clear it
     } else {
       $newTweet.slideDown();
       setTimeout(() => {
@@ -171,7 +175,7 @@ $(document).ready(function () {
 
   $(window).scroll(function () {
     const scrollBarPos = $(this).scrollTop();
-    if (scrollBarPos > 200) {
+    if (scrollBarPos > 150) {
       $("#scroll-up").fadeIn(1000);
       $("#navigation").slideUp("slow");
     } else {
@@ -186,6 +190,6 @@ $(document).ready(function () {
     $("html, body").animate({ scrollTop: 0 }, 1200);
   });
 
-  newTweetHandler(); //new-tweet form submission set up
+  newTweetHandler(); //new-tweet form submission set up, sent this code off to a function to increase readibility
   render(); //renders the tweets from db and resets counter and input text
 });
