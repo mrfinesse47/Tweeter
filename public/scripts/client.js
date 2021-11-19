@@ -97,9 +97,10 @@ const errorHandler = (isError, message) => {
 
 const render = () => {
   $("#tweet-text").val("");
-  $(".counter").val(0);
+  $(".counter").val(140);
   $(".new-tweet").slideUp();
   loadTweets(renderTweets);
+  $("html, body").animate({ scrollTop: 0 }, 1200);
   errorHandler(false);
 };
 
@@ -168,7 +169,7 @@ $(document).ready(function () {
 
   $(window).scroll(function () {
     const scrollBarPos = $(this).scrollTop();
-    if (scrollBarPos > 500) {
+    if (scrollBarPos > 200) {
       $("#scroll-up").fadeIn(1000);
       $("#navigation").slideUp("slow");
     } else {

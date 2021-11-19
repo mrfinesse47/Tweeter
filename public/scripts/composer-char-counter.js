@@ -19,7 +19,7 @@ $(document).ready(function () {
       counter.addClass("over-limit");
       counter.text(charLeft);
     } else {
-      counter.text(charCount);
+      counter.text(140 - charCount);
       counter.removeClass("over-limit");
     }
   });
