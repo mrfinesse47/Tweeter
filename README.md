@@ -40,7 +40,7 @@ Tweeter is a simple, single-page Twitter clone.
 
 ## Dependencies
 
-    -body-parser: ^1.15.2,
+   - body-parser: ^1.15.2,
    - chance: ^1.0.2,
    - express: ^4.13.4,
    - md5: ^2.1.0
